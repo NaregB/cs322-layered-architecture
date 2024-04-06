@@ -1,7 +1,9 @@
 package am.cs322.model;
 
 import jakarta.persistence.*;
+import soa322_hw.model_account.Account;
 
+import java.util.List;
 import java.util.Objects;
 
 @Entity

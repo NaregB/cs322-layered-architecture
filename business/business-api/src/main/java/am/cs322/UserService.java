@@ -4,6 +4,6 @@ import am.cs322.model.UserDTO;
 
 public interface UserService {
 
-    public UserDTO createUser(String firstName, String lastName);
+    UserDTO createUser(String firstName, String lastName);
 
 }

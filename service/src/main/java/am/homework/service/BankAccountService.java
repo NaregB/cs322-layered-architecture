@@ -30,7 +30,7 @@ public class BankAccountService {
     }
 
 
-    public void debit(Long accountId, double amount) {
+    public boolean debit(Long accountId, double amount) {
         Optional<BankAccount> optionalBankAccount = bankAccountRepository.findById(accountId);
         if (optionalBankAccount.isPresent()) {
             BankAccount bankAccount = optionalBankAccount.get();
@@ -38,18 +38,22 @@ public class BankAccountService {
             if (balance >= amount) {
                 bankAccount.setBalance(balance - amount);
                 bankAccountRepository.save(bankAccount);
+                return true;
             }
         }
+        return false;
     }
 
 
-    public void credit(Long accountId, double amount) {
+    public boolean credit(Long accountId, double amount) {
         Optional<BankAccount> optionalBankAccount = bankAccountRepository.findById(accountId);
         if (optionalBankAccount.isPresent()) {
             BankAccount bankAccount = optionalBankAccount.get();
             double balance = bankAccount.getBalance();
             bankAccount.setBalance(balance + amount);
+            return true;
         }
+        return false;
     }
 }
 

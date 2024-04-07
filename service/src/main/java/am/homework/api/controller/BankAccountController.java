@@ -1,13 +1,11 @@
 package am.homework.api.controller;
 
+import am.homework.api.dto.BankAccountDto;
 import am.homework.service.BankAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
@@ -24,5 +22,17 @@ public class BankAccountController {
     public ResponseEntity<?> checkBalance(@PathVariable Long id) {
         double balance = bankAccountService.checkBalance(id);
         return balance == -1 ? ResponseEntity.notFound().build() : ResponseEntity.ok(balance);
+    }
+
+    @PostMapping(value = "/debit-balance")
+    public ResponseEntity<?> debitBalance(@RequestBody BankAccountDto bankAccountDto) {
+        boolean success = bankAccountService.debit(bankAccountDto.getId(), bankAccountDto.getAmount());
+        return success ? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
+    }
+
+    @PostMapping(value = "/credit-balance")
+    public ResponseEntity<?> creditBalance(@RequestBody BankAccountDto bankAccountDto) {
+        boolean success = bankAccountService.credit(bankAccountDto.getId(), bankAccountDto.getAmount());
+        return success ? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
     }
 }

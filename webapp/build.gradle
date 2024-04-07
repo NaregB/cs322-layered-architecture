@@ -7,4 +7,5 @@ dependencies {
     implementation(project(":business"))
     implementation(project(":business:business-api"))
     implementation(project(":business:business-impl"))
+    implementation(project(":domain"))
 }

@@ -1,4 +1,4 @@
-package dto;
+package dev.danvega.account.io.am.dto;
 
 import java.math.BigDecimal;
 

@@ -1,0 +1,8 @@
+dependencies {
+    implementation(project(":data:data-api"))
+    implementation(project(":domain"))
+}
+
+tasks.register('prepareKotlinBuildScriptModel') {
+
+}

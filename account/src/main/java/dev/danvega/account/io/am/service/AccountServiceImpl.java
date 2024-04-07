@@ -1,11 +1,11 @@
-package service;
+package dev.danvega.account.io.am.service;
 
-import dto.AccountDto;
-import dto.AccountEntity;
+import dev.danvega.account.io.am.dto.AccountDto;
+import dev.danvega.account.io.am.dto.AccountEntity;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.AccountRepository;
+import dev.danvega.account.io.am.repository.AccountRepository;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -16,17 +16,19 @@ import java.util.List;
 
 @Service
 public class AccountServiceImpl implements AccountService {
-    private final AccountRepository accountRepository;
-
+    private AccountRepository accountRepository;
+    public AccountServiceImpl(){}
 
     @Autowired
     public AccountServiceImpl(AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
     }
 
+
+
     @Transactional
     @Override
-    public void debit (String accountId, BigDecimal amount) {
+    public void debit (Long accountId, BigDecimal amount) {
         AccountEntity account = accountRepository.findById(accountId)
                 .orElseThrow(() -> new IllegalArgumentException("Account not found"));
         BigDecimal currentBalance = account.getBalance();
@@ -40,7 +42,7 @@ public class AccountServiceImpl implements AccountService {
 
     @Transactional
     @Override
-    public void credit(String accountId, BigDecimal amount) {
+    public void credit(Long accountId, BigDecimal amount) {
         AccountEntity account = accountRepository.findById(accountId)
                 .orElseThrow(() -> new IllegalArgumentException("Account not found"));
         BigDecimal currentBalance = account.getBalance();
@@ -57,8 +59,7 @@ public class AccountServiceImpl implements AccountService {
         accountRepository.save(account);
 
         AccountDto accountDto = new AccountDto();
-        accountDto.setId(accountDto.getId());
-
+        accountDto.setId(String.valueOf(account.getId()));
         return accountDto;
     }
 

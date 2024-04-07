@@ -35,3 +35,14 @@ out/
 
 ### VS Code ###
 .vscode/
+/account/.gitignore
+/account/src/main/java/dev/danvega/account/AccountApplication.java
+/account/src/test/java/dev/danvega/account/AccountApplicationTests.java
+/account/src/main/resources/application.properties
+/account/gradle/wrapper/gradle-wrapper.jar
+/account/gradle/wrapper/gradle-wrapper.properties
+/account/gradlew
+/account/gradlew.bat
+/account/settings.gradle
+/account/gradle/wrapper/gradle-wrapper.jar
+/account/gradle/wrapper/gradle-wrapper.jar

@@ -12,4 +12,6 @@ include 'business:business-api'
 include 'business:business-impl'
 include 'business:business-test'
 include 'data:data-api'
+include 'service'
+
 

@@ -2,4 +2,3 @@ dependencies {
     implementation(project(":presentation:presentation-api"))
     implementation(project(":business:business-api"))
 }
-

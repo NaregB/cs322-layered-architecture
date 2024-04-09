@@ -1,0 +1,6 @@
+subprojects {
+    dependencies {
+        implementation(project(":AccountService:data:data-api"))
+        implementation(project(":AccountService:domain"))
+    }
+}

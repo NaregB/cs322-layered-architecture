@@ -1,0 +1,6 @@
+subprojects {
+    dependencies {
+        implementation(project(":AccountService:business"))
+        implementation(project(":AccountService:domain"))
+    }
+}

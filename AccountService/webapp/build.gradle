@@ -1,0 +1,11 @@
+dependencies {
+    implementation(project(":AccountService:presentation"))
+    implementation(project(":AccountService:presentation:presentation-api"))
+    implementation(project(":AccountService:presentation:presentation-impl"))
+    implementation(project(":AccountService:domain"))
+    implementation(project(":AccountService:data"))
+    implementation(project(":AccountService:data:data-api"))
+    implementation(project(":AccountService:business"))
+    implementation(project(":AccountService:business:business-api"))
+    implementation(project(":AccountService:business:business-impl"))
+}

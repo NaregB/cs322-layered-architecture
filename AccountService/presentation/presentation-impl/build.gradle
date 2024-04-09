@@ -1,0 +1,5 @@
+dependencies {
+    implementation(project(":AccountService:presentation:presentation-api"))
+    implementation(project(":AccountService:business:business-api"))
+}
+

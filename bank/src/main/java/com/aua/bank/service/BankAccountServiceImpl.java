@@ -1,10 +1,10 @@
-package am.cs322;
+package com.aua.bank.service;
 
-//import am.cs322.domain.BankAccount;
-
-import am.cs322.model.BankAccount;
-import am.cs322.model.BankAccountDTO;
-import am.cs322.model.User;
+import com.aua.bank.domain.BankAccount;
+import com.aua.bank.model.BankAccountDTO;
+import com.aua.bank.domain.User;
+import com.aua.bank.repository.BankAccountRepository;
+import com.aua.bank.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

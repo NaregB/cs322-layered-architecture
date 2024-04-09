@@ -1,4 +1,4 @@
-package am.cs322.model;
+package com.aua.bank.model;
 
 import java.math.BigDecimal;
 

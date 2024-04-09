@@ -1,6 +1,6 @@
-package am.cs322;
+package com.aua.bank.service;
 
-import am.cs322.model.BankAccountDTO;
+import com.aua.bank.model.BankAccountDTO;
 
 import java.math.BigDecimal;
 

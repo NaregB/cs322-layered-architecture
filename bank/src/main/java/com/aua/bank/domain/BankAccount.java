@@ -1,6 +1,7 @@
-package am.cs322.model;
+package com.aua.bank.domain;
 
 import jakarta.persistence.*;
+
 import java.math.BigDecimal;
 
 @Entity

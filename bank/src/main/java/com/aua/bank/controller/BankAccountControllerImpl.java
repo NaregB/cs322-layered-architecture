@@ -1,8 +1,9 @@
-package am.cs322;
+package com.aua.bank.controller;
 
-import am.cs322.model.BankAccountDTO;
-import am.cs322.model.CreateBankAccountRequest;
-import am.cs322.model.TransactionRequest;
+import com.aua.bank.model.BankAccountDTO;
+import com.aua.bank.model.CreateBankAccountRequest;
+import com.aua.bank.model.TransactionRequest;
+import com.aua.bank.service.BankAccountService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

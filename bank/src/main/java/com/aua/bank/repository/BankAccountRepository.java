@@ -1,6 +1,6 @@
-package am.cs322;
+package com.aua.bank.repository;
 
-import am.cs322.model.BankAccount;
+import com.aua.bank.domain.BankAccount;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
